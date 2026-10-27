@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Loom &amp; Layer | Step 2: Garment Pattern Pieces</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "on-background": "#1b1c1a",
+            "inverse-on-surface": "#f2f0ed",
+            "on-tertiary-fixed-variant": "#4b4640",
+            "surface-bright": "#fbf9f6",
+            "on-primary-fixed": "#1e1b19",
+            "outline": "#7e7570",
+            "background": "#fbf9f6",
+            "primary": "#000000",
+            "on-error-container": "#93000a",
+            "surface-tint": "#625d5b",
+            "on-primary-fixed-variant": "#4a4643",
+            "surface-variant": "#e4e2df",
+            "on-secondary-container": "#70040f",
+            "surface-dim": "#dbdad7",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#4d4540",
+            "on-tertiary-container": "#89837c",
+            "secondary": "#ab3333",
+            "primary-fixed-dim": "#ccc5c1",
+            "tertiary": "#000000",
+            "inverse-surface": "#30312f",
+            "tertiary-container": "#1f1b16",
+            "surface-container-highest": "#e4e2df",
+            "on-primary-container": "#888380",
+            "secondary-fixed-dim": "#ffb3ae",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#d0c4be",
+            "surface-container-low": "#f5f3f0",
+            "surface-container-high": "#eae8e5",
+            "on-tertiary-fixed": "#1f1b16",
+            "surface": "#fbf9f6",
+            "on-surface": "#1b1c1a",
+            "inverse-primary": "#ccc5c1",
+            "secondary-container": "#ff716c",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#410004",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#8a1b1e",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#eae1d9",
+            "surface-container": "#efeeeb",
+            "secondary-fixed": "#ffdad7",
+            "tertiary-fixed-dim": "#cdc5be",
+            "primary-fixed": "#e9e1dd",
+            "primary-container": "#1e1b19"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-md": "1.5rem",
+            "margin-lg": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "gutter-lg": "1.5rem",
+            "space-2xs": "0.125rem",
+            "space-2xl": "4rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "metric-mono": [
+              "Inter"
+            ],
+            "display-lg-mobile": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-md": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "body-md": [
+              "Inter"
+            ],
+            "body-sm": [
+              "Inter"
+            ],
+            "body-lg": [
+              "Inter"
+            ],
+            "display-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "label-sm": [
+              "Inter"
+            ],
+            "label-md": [
+              "Inter"
+            ]
+          },
+          "fontSize": {
+            "metric-mono": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "500"
+              }
+            ],
+            "display-lg-mobile": [
+              "30px",
+              {
+                "lineHeight": "38px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-md": [
+              "22px",
+              {
+                "lineHeight": "30px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-sm": [
+              "18px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "500"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "22px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ],
+            "body-sm": [
+              "12px",
+              {
+                "lineHeight": "18px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "26px",
+                "letterSpacing": "-0.005em",
+                "fontWeight": "400"
+              }
+            ],
+            "display-lg": [
+              "40px",
+              {
+                "lineHeight": "48px",
+                "letterSpacing": "-0.03em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.06em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "500"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="min-h-screen flex flex-col bg-background text-on-background selection:bg-secondary-fixed selection:text-on-secondary-fixed font-body-md text-body-md">
+<!-- ================= TOP APP BAR (Shared Component) ================= -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-space-lg h-14 max-w-full sticky top-0 z-50">
+<!-- Brand & Left Navigation Links -->
+<div class="flex items-center space-x-space-lg">
+<div class="flex items-center space-x-space-xs">
+<span class="text-headline-sm font-headline-lg tracking-tight font-semibold text-primary dark:text-inverse-primary">Loom &amp; Layer</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary ml-1"></span>
+</div>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center space-x-space-md pt-2">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 text-label-md font-label-md hover:bg-surface-container-low transition-colors duration-150" href="#">Dashboard</a>
+<!-- Active Nav: Cutting Plans / Patterning Journey -->
+<a class="border-b-2 border-primary dark:border-inverse-primary text-primary dark:text-inverse-primary font-medium pb-2 text-label-md font-label-md" href="#">Cutting Plans</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 text-label-md font-label-md hover:bg-surface-container-low transition-colors duration-150" href="#">Garments</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 text-label-md font-label-md hover:bg-surface-container-low transition-colors duration-150" href="#">Fabric Inventory</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 text-label-md font-label-md hover:bg-surface-container-low transition-colors duration-150" href="#">ESG Audits</a>
+</nav>
+</div>
+<!-- Trailing Actions & Telemetry -->
+<div class="flex items-center space-x-space-md">
+<!-- Search Bar on Left of Trailing actions -->
+<div class="relative hidden lg:flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-on-surface-variant text-[18px]">search</span>
+<input class="h-8 pl-8 pr-3 text-body-sm font-body-sm bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:border-primary text-on-surface placeholder:text-outline w-56 transition-all duration-150" placeholder="Search patterns (Cmd+K)" type="text"/>
+</div>
+<!-- Secondary Cutter Feed Status Indicator -->
+<div class="hidden sm:flex items-center space-x-space-xs px-2.5 py-1 bg-surface-container-low border border-outline-variant rounded-lg text-label-sm font-label-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="text-on-surface font-metric-mono text-metric-mono">Cutter Feed: Online</span>
+</div>
+<!-- Trailing Icon Actions -->
+<div class="flex items-center space-x-space-xs text-on-surface-variant">
+<button aria-label="Vector Tuning" class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-low hover:text-primary transition-colors" title="Vector Tuning">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+<button aria-label="Notifications" class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-low hover:text-primary transition-colors relative" title="Notifications">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-secondary rounded-full"></span>
+</button>
+</div>
+<!-- Profile Avatar -->
+<div class="flex items-center pl-2 border-l border-outline-variant">
+<img alt="Lead CAM Engineer Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A portrait photograph of a lead CAM engineer in a crisp minimalist technical atelier, bathed in diffused neutral gallery lighting. The engineer wears modern black technical apparel, looking focused with sharp, sophisticated architectural restraint in an industrial studio context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdbeptPB_TcesWB76uuLT3SMDOI_6SKD7aUcq95TduCzFXdtXALxA5tbfa8K0_u1xKGacO1fG9B48MQtv7gTSrHHdXZnCR0IObNiFQBstfjvakEriZP7Wk7sSJ8-sULAmqE03-Fr4KLK-FhVgG4JPntISMB4qxb4aCWxgmGybK9OslYVAQz4AC2BItmvlX4SjVl50A0QVC_wcvzPOZam3nM4ztxKicwtIvM1ZuUPthvNU1zJsWcecJPg"/>
+</div>
+</div>
+</header>
+<!-- ================= SUB-HEADER: STEP PROGRESSION RAIL ================= -->
+<section class="bg-surface-container-lowest border-b border-outline-variant px-space-lg py-space-sm">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Step Indicator (1. Fabric Setup -> 2. Add Patterns -> 3. Optimization -> 4. Cutting Plan) -->
+<nav aria-label="Progress" class="flex items-center flex-wrap gap-2 text-label-sm font-label-sm">
+<!-- Step 1: Done -->
+<div class="flex items-center space-x-2 text-on-surface-variant">
+<div class="w-5 h-5 rounded flex items-center justify-center bg-surface-container text-primary border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-medium text-on-surface line-through opacity-75">1. Fabric Setup</span>
+<span class="text-outline-variant">→</span>
+</div>
+<!-- Step 2: Active -->
+<div class="flex items-center space-x-2 bg-surface-container-low px-2 py-1 rounded border border-outline-variant">
+<div class="w-5 h-5 rounded flex items-center justify-center bg-primary text-surface-container-lowest font-metric-mono text-metric-mono">
+            2
+          </div>
+<span class="font-semibold text-primary">2. Add Patterns</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary ml-0.5"></span>
+</div>
+<span class="text-outline-variant">→</span>
+<!-- Step 3: Pending -->
+<div class="flex items-center space-x-2 text-outline">
+<div class="w-5 h-5 rounded flex items-center justify-center bg-surface-container border border-outline-variant font-metric-mono text-metric-mono">
+            3
+          </div>
+<span>3. Optimization</span>
+<span class="text-outline-variant">→</span>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex items-center space-x-2 text-outline">
+<div class="w-5 h-5 rounded flex items-center justify-center bg-surface-container border border-outline-variant font-metric-mono text-metric-mono">
+            4
+          </div>
+<span>4. Cutting Plan</span>
+</div>
+</nav>
+<!-- Spec Badges & Project Context -->
+<div class="flex items-center space-x-space-sm text-label-sm font-label-sm">
+<span class="text-on-surface-variant">PROJECT ID:</span>
+<span class="font-metric-mono text-metric-mono bg-surface-container-low px-2 py-0.5 rounded border border-outline-variant text-primary font-medium">CAM-BSPK-782</span>
+<span class="text-outline">•</span>
+<span class="text-on-surface-variant font-metric-mono">Fabric: 100% Raw Selvedge Twill (310 GSM)</span>
+</div>
+</div>
+</section>
+<!-- ================= MAIN WORKBENCH CANVAS ================= -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-space-lg py-space-lg">
+<!-- Header Block -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-space-lg border-b border-outline-variant">
+<div>
+<div class="flex items-center space-x-space-sm">
+<h1 class="text-headline-lg font-headline-lg text-primary tracking-tight">Garment Pattern Pieces</h1>
+<span class="inline-flex items-center h-5 px-2 text-label-sm font-label-sm bg-surface-container border border-outline-variant text-primary rounded">
+            CALIBRATED DXF/AAMA
+          </span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+          9 pieces loaded for <span class="font-medium text-primary">Bespoke Overshirt (Size L)</span>
+</p>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center space-x-space-sm">
+<!-- Import Template Dropdown -->
+<div class="relative">
+<button class="h-9 px-3.5 bg-surface-container-lowest hover:bg-surface-container-low text-primary border border-outline-variant hover:border-outline rounded-lg text-label-md font-label-md flex items-center space-x-2 active:scale-[0.99] transition-all" id="import-btn">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Import Template</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<!-- + Add Custom Piece Button -->
+<button class="h-9 px-4 bg-primary hover:bg-[#2D2926] text-surface-container-lowest border border-primary rounded-lg text-label-md font-label-md flex items-center space-x-2 active:scale-[0.99] transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>+ Add Custom Piece</span>
+</button>
+</div>
+</div>
+<!-- Asymmetric Bento Content Grid: Pattern List (Left 8-col) + Digitizer Viewfinder (Right 4-col) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mt-space-lg">
+<!-- LEFT: Patterns Table / Piece Architecture (8-Cols) -->
+<div class="lg:col-span-8 flex flex-col space-y-space-md">
+<!-- Table Toolbar & Filters -->
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center space-x-space-sm text-label-sm font-label-sm">
+<span class="text-on-surface-variant">ACTIVE SPEC:</span>
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded border border-outline-variant font-medium text-primary">Total Area: 2.18 m²</span>
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded border border-outline-variant font-medium text-primary">Est. Nest Efficiency: 89.4%</span>
+</div>
+<div class="flex items-center space-x-2 text-label-sm font-label-sm text-on-surface-variant">
+<span>Grainline Constraint Lock:</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-medium text-primary">Strict</span>
+</div>
+</div>
+<!-- Master Table Frame -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-low text-label-sm font-label-sm text-on-surface-variant tracking-wider">
+<th class="py-3 px-4 font-medium" scope="col">PIECE NAME &amp; CONTOUR</th>
+<th class="py-3 px-4 font-medium" scope="col">BOUNDING BOX</th>
+<th class="py-3 px-3 font-medium text-center" scope="col">QTY</th>
+<th class="py-3 px-4 font-medium" scope="col">GRAINLINE PROTOCOL</th>
+<th class="py-3 px-3 font-medium text-right" scope="col">NET AREA</th>
+<th class="py-3 px-4 font-medium text-right" scope="col">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-body-sm font-body-sm">
+<!-- Row 1: Back Yoke & Panel -->
+<tr class="hover:bg-surface-container-low transition-colors duration-100 group">
+<td class="py-3 px-4">
+<div class="flex items-center space-x-3">
+<!-- Contour Vector Preview Thumbnail -->
+<div class="w-10 h-10 rounded border border-outline-variant bg-surface-container flex items-center justify-center p-1 relative overflow-hidden group-hover:border-primary transition-colors">
+<div class="w-7 h-7 border border-primary bg-surface-container-lowest rounded-sm transform rotate-1 flex items-center justify-center text-[10px] font-metric-mono">
+<span class="material-symbols-outlined text-[14px] text-primary">crop_portrait</span>
+</div>
+</div>
+<div>
+<div class="font-medium text-primary text-body-md font-body-md">Back Yoke &amp; Panel</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">BY-01 • Primary Structural Cut</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 font-metric-mono text-metric-mono text-primary">
+                    52.0 × 76.5 <span class="text-outline text-[11px]">cm</span>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-block px-2 py-0.5 bg-surface-container border border-outline-variant rounded font-metric-mono text-metric-mono text-primary">1</span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_upward</span>
+<span class="font-metric-mono text-metric-mono text-primary">Warp 0°</span>
+<span class="text-[10px] text-outline ml-1 font-label-sm">(Fixed)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-metric-mono text-metric-mono text-primary font-medium">
+                    0.39 <span class="text-outline text-[11px]">m²</span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center space-x-1">
+<button class="px-2 py-1 text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Edit Parameters">Edit</button>
+<button class="px-2 py-1 text-label-sm font-label-sm text-secondary hover:text-on-secondary-container hover:bg-error-container rounded transition-colors" title="Delete Piece">Delete</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Front Left Panel -->
+<tr class="hover:bg-surface-container-low transition-colors duration-100 group">
+<td class="py-3 px-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded border border-outline-variant bg-surface-container flex items-center justify-center p-1 relative overflow-hidden group-hover:border-primary transition-colors">
+<div class="w-6 h-8 border border-primary bg-surface-container-lowest rounded-sm flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[14px] text-primary">segment</span>
+</div>
+</div>
+<div>
+<div class="font-medium text-primary text-body-md font-body-md">Front Left Panel</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">FLP-02 • Placket Included</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 font-metric-mono text-metric-mono text-primary">
+                    42.5 × 74.0 <span class="text-outline text-[11px]">cm</span>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-block px-2 py-0.5 bg-surface-container border border-outline-variant rounded font-metric-mono text-metric-mono text-primary">1</span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_upward</span>
+<span class="font-metric-mono text-metric-mono text-primary">Warp 0°</span>
+<span class="text-[10px] text-outline ml-1 font-label-sm">(Fixed)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-metric-mono text-metric-mono text-primary font-medium">
+                    0.31 <span class="text-outline text-[11px]">m²</span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center space-x-1">
+<button class="px-2 py-1 text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors">Edit</button>
+<button class="px-2 py-1 text-label-sm font-label-sm text-secondary hover:text-on-secondary-container hover:bg-error-container rounded transition-colors">Delete</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Front Right Panel -->
+<tr class="hover:bg-surface-container-low transition-colors duration-100 group">
+<td class="py-3 px-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded border border-outline-variant bg-surface-container flex items-center justify-center p-1 relative overflow-hidden group-hover:border-primary transition-colors">
+<div class="w-6 h-8 border border-primary bg-surface-container-lowest rounded-sm flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[14px] text-primary">segment</span>
+</div>
+</div>
+<div>
+<div class="font-medium text-primary text-body-md font-body-md">Front Right Panel</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">FRP-03 • Symmetrical Match</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 font-metric-mono text-metric-mono text-primary">
+                    42.5 × 74.0 <span class="text-outline text-[11px]">cm</span>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-block px-2 py-0.5 bg-surface-container border border-outline-variant rounded font-metric-mono text-metric-mono text-primary">1</span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_upward</span>
+<span class="font-metric-mono text-metric-mono text-primary">Warp 0°</span>
+<span class="text-[10px] text-outline ml-1 font-label-sm">(Fixed)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-metric-mono text-metric-mono text-primary font-medium">
+                    0.31 <span class="text-outline text-[11px]">m²</span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center space-x-1">
+<button class="px-2 py-1 text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors">Edit</button>
+<button class="px-2 py-1 text-label-sm font-label-sm text-secondary hover:text-on-secondary-container hover:bg-error-container rounded transition-colors">Delete</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Sleeves -->
+<tr class="hover:bg-surface-container-low transition-colors duration-100 group">
+<td class="py-3 px-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded border border-outline-variant bg-surface-container flex items-center justify-center p-1 relative overflow-hidden group-hover:border-primary transition-colors">
+<div class="w-6 h-7 border border-primary bg-surface-container-lowest rounded-sm flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[14px] text-primary">airline_stops</span>
+</div>
+</div>
+<div>
+<div class="font-medium text-primary text-body-md font-body-md">Sleeves</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">SLV-Pair • Mirrored Paired Cut</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 font-metric-mono text-metric-mono text-primary">
+                    34.0 × 62.0 <span class="text-outline text-[11px]">cm</span>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-block px-2 py-0.5 bg-surface-container border border-outline-variant rounded font-metric-mono text-metric-mono text-primary">2</span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">swap_vert</span>
+<span class="font-metric-mono text-metric-mono text-primary">0°/180° Permitted</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-metric-mono text-metric-mono text-primary font-medium">
+                    0.42 <span class="text-outline text-[11px]">m²</span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center space-x-1">
+<button class="px-2 py-1 text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors">Edit</button>
+<button class="px-2 py-1 text-label-sm font-label-sm text-secondary hover:text-on-secondary-container hover:bg-error-container rounded transition-colors">Delete</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Collar & Stand -->
+<tr class="hover:bg-surface-container-low transition-colors duration-100 group">
+<td class="py-3 px-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded border border-outline-variant bg-surface-container flex items-center justify-center p-1 relative overflow-hidden group-hover:border-primary transition-colors">
+<div class="w-8 h-3 border border-primary bg-surface-container-lowest rounded-sm flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[12px] text-primary">horizontal_rule</span>
+</div>
+</div>
+<div>
+<div class="font-medium text-primary text-body-md font-body-md">Collar &amp; Stand</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">COL-05 • Upper &amp; Under Collar</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 font-metric-mono text-metric-mono text-primary">
+                    48.0 × 8.5 <span class="text-outline text-[11px]">cm</span>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-block px-2 py-0.5 bg-surface-container border border-outline-variant rounded font-metric-mono text-metric-mono text-primary">2</span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_forward</span>
+<span class="font-metric-mono text-metric-mono text-primary">Cross-grain 90°</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-metric-mono text-metric-mono text-primary font-medium">
+                    0.08 <span class="text-outline text-[11px]">m²</span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center space-x-1">
+<button class="px-2 py-1 text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors">Edit</button>
+<button class="px-2 py-1 text-label-sm font-label-sm text-secondary hover:text-on-secondary-container hover:bg-error-container rounded transition-colors">Delete</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Patch Pockets & Cuffs -->
+<tr class="hover:bg-surface-container-low transition-colors duration-100 group">
+<td class="py-3 px-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded border border-outline-variant bg-surface-container flex items-center justify-center p-1 relative overflow-hidden group-hover:border-primary transition-colors">
+<div class="w-6 h-6 border border-primary bg-surface-container-lowest rounded-sm flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[14px] text-primary">aspect_ratio</span>
+</div>
+</div>
+<div>
+<div class="font-medium text-primary text-body-md font-body-md">Patch Pockets &amp; Cuffs</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">PKT-CUFF-06 • Interfacing Matched</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 font-metric-mono text-metric-mono text-primary">
+                    16.0 × 18.0 <span class="text-outline text-[11px]">cm</span>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-block px-2 py-0.5 bg-surface-container border border-outline-variant rounded font-metric-mono text-metric-mono text-primary">4</span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-700">rotate_right</span>
+<span class="font-metric-mono text-metric-mono text-primary">Flexible</span>
+<span class="text-[10px] text-outline ml-1 font-label-sm">(Bias ±45°)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-metric-mono text-metric-mono text-primary font-medium">
+                    0.12 <span class="text-outline text-[11px]">m²</span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center space-x-1">
+<button class="px-2 py-1 text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors">Edit</button>
+<button class="px-2 py-1 text-label-sm font-label-sm text-secondary hover:text-on-secondary-container hover:bg-error-container rounded transition-colors">Delete</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Bottom Bar Stats -->
+<div class="border-t border-outline-variant bg-surface-container-low px-4 py-2.5 flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+<span>DXF Splines validated with 0 self-intersections or notch collisions.</span>
+</div>
+<div class="font-metric-mono text-metric-mono text-primary">
+              Showing 6 of 6 Pattern Groups (9 total cut units)
+            </div>
+</div>
+</div>
+</div>
+<!-- RIGHT: Pattern Digitizer / Camera Contour Scan (4-Cols) -->
+<div class="lg:col-span-4 flex flex-col space-y-space-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-md flex flex-col h-full shadow-sm">
+<!-- Card Header -->
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">document_scanner</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Pattern Digitizer</h2>
+</div>
+<span class="text-label-sm font-label-sm bg-surface-container-low border border-outline-variant px-2 py-0.5 rounded font-metric-mono text-on-surface">
+              AAMA / ASTM
+            </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+            Instant camera contour scan to trace paper patterns with continuous millimeter calibration.
+          </p>
+<!-- Interactive Viewfinder / Dropzone -->
+<div class="relative mt-space-md flex-1 min-h-[300px] border-2 border-dashed border-outline-variant hover:border-primary rounded-lg bg-surface-container-low transition-colors flex flex-col items-center justify-center p-space-md overflow-hidden group cursor-pointer">
+<!-- Millimeter Grid Overlay Visual -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(#7e7570 1px, transparent 1px); background-size: 16px 16px;"></div>
+<!-- Optical Corner Registration Marks (CAM Fiducial Markers) -->
+<div class="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-primary"></div>
+<div class="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
+<!-- Precision Reticle in Center -->
+<div class="w-16 h-16 rounded-full border border-outline-variant group-hover:border-primary flex items-center justify-center bg-surface-container-lowest shadow-sm mb-3 group-hover:scale-105 transition-all">
+<span class="material-symbols-outlined text-primary text-[28px]">photo_camera</span>
+</div>
+<div class="text-center z-10">
+<div class="font-medium text-primary text-body-md font-body-md">Drop Paper Contour or Capture</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant mt-1">Supports High-Res JPG, TIFF, or DXF Scan</div>
+</div>
+<!-- Integrated MM Calibration Ruler Ribbon -->
+<div class="w-full mt-4 bg-surface-container-lowest border border-outline-variant rounded p-2 z-10">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-1">
+<span>Optical Scale Calibration</span>
+<span class="font-metric-mono text-primary font-medium">1.000 px = 0.254 mm</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full"></div>
+</div>
+</div>
+<div class="mt-3 flex items-center space-x-2 text-label-sm font-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Camera auto-keystone correction active</span>
+</div>
+</div>
+<!-- Secondary Auxiliary Tools -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant grid grid-cols-2 gap-2">
+<button class="h-8 px-2 bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded text-label-sm font-label-sm text-primary flex items-center justify-center space-x-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">straighten</span>
+<span>Re-Calibrate</span>
+</button>
+<button class="h-8 px-2 bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded text-label-sm font-label-sm text-primary flex items-center justify-center space-x-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">filter_center_focus</span>
+<span>Trace Notch (V)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- ================= BOTTOM ACTION BAR (Step Navigation) ================= -->
+<footer class="sticky bottom-0 z-40 bg-surface-container-lowest border-t border-outline-variant px-space-lg py-space-md shadow-sm">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+<!-- Back Action -->
+<a class="inline-flex items-center space-x-2 text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md py-2 px-3 rounded hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>← Back to Fabric Setup</span>
+</a>
+<!-- Telemetry Mid-summary -->
+<div class="hidden md:flex items-center space-x-space-md text-label-sm font-label-sm text-on-surface-variant">
+<span>Grainline Integrity: <strong class="text-primary font-medium">100% Locked</strong></span>
+<span class="text-outline">•</span>
+<span>Pieces: <strong class="text-primary font-medium">9 of 9 Ready</strong></span>
+<span class="text-outline">•</span>
+<span>Estimated Spool Time: <strong class="text-primary font-medium font-metric-mono">42 sec</strong></span>
+</div>
+<!-- Primary Advance CTA Button -->
+<a class="w-full sm:w-auto h-11 px-6 bg-primary hover:bg-[#2D2926] text-surface-container-lowest rounded-lg font-label-md text-label-md flex items-center justify-center space-x-2 border border-primary active:scale-[0.99] transition-all shadow-md" href="#">
+<span>Proceed to Step 3: Planner &amp; Optimization</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</footer>
+<!-- ================= SYSTEM FOOTER (Shared Component Anchor) ================= -->
+<div class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-space-lg py-space-md max-w-full text-body-sm font-body-sm text-on-surface-variant">
+<div class="text-label-md font-label-md font-medium text-primary mb-2 md:mb-0">
+        © 2025 Loom &amp; Layer CAD/CAM Systems. Precision Yield Protocol.
+      </div>
+<div class="flex items-center space-x-space-md text-label-sm font-label-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#">CAM Telemetry Specs</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#">Nesting Algorithmic Standards</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#">Fabric Yield Compliance</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<!-- Interactive script for feedback & hover states -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const importBtn = document.getElementById('import-btn');
+      if (importBtn) {
+        importBtn.addEventListener('click', () => {
+          alert('Template Catalog: Bespoke Overshirt (Size L) is active. Select "Import DXF/AAMA" from your atelier pattern vault.');
+        });
+      }
+    });
+  </script>
+</body></html>

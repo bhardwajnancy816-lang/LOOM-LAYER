@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Loom &amp; Layer — Precision Fabric Marker Optimization &amp; CAM Automation</title>
+<!-- Material Symbols & Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Script -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim as mandated -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "on-background": "#1b1c1a",
+            "inverse-on-surface": "#f2f0ed",
+            "on-tertiary-fixed-variant": "#4b4640",
+            "surface-bright": "#fbf9f6",
+            "on-primary-fixed": "#1e1b19",
+            "outline": "#7e7570",
+            "background": "#fbf9f6",
+            "primary": "#000000",
+            "on-error-container": "#93000a",
+            "surface-tint": "#625d5b",
+            "on-primary-fixed-variant": "#4a4643",
+            "surface-variant": "#e4e2df",
+            "on-secondary-container": "#70040f",
+            "surface-dim": "#dbdad7",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#4d4540",
+            "on-tertiary-container": "#89837c",
+            "secondary": "#ab3333",
+            "primary-fixed-dim": "#ccc5c1",
+            "tertiary": "#000000",
+            "inverse-surface": "#30312f",
+            "tertiary-container": "#1f1b16",
+            "surface-container-highest": "#e4e2df",
+            "on-primary-container": "#888380",
+            "secondary-fixed-dim": "#ffb3ae",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#d0c4be",
+            "surface-container-low": "#f5f3f0",
+            "surface-container-high": "#eae8e5",
+            "on-tertiary-fixed": "#1f1b16",
+            "surface": "#fbf9f6",
+            "on-surface": "#1b1c1a",
+            "inverse-primary": "#ccc5c1",
+            "secondary-container": "#ff716c",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#410004",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#8a1b1e",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#eae1d9",
+            "surface-container": "#efeeeb",
+            "secondary-fixed": "#ffdad7",
+            "tertiary-fixed-dim": "#cdc5be",
+            "primary-fixed": "#e9e1dd",
+            "primary-container": "#1e1b19"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-md": "1.5rem",
+            "margin-lg": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "gutter-lg": "1.5rem",
+            "space-2xs": "0.125rem",
+            "space-2xl": "4rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "metric-mono": ["Inter"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "metric-mono": ["13px", {"lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "display-lg-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .architectural-grid {
+      background-image: radial-gradient(#d0c4be 0.75px, transparent 0.75px);
+      background-size: 16px 16px;
+    }
+    .linen-substrate {
+      background-color: #FAF8F5;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body-md selection:bg-secondary-fixed selection:text-on-secondary-container">
+<!-- Top Navigation Anchor from Shared Component Specifications -->
+<header class="sticky top-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-space-lg h-14 max-w-7xl mx-auto">
+<!-- Brand & Product Identity -->
+<div class="flex items-center gap-space-lg">
+<a class="text-headline-sm font-headline-lg tracking-tight font-semibold text-primary flex items-center gap-space-xs" href="#">
+<span class="w-2.5 h-2.5 bg-secondary rounded-[1px] inline-block"></span>
+<span>Loom &amp; Layer</span>
+</a>
+<!-- Public Navigation Links -->
+<nav class="hidden md:flex items-center gap-space-md ml-space-md">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-150" href="#platform">Platform</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-150" href="#solutions">Solutions</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-150" href="#esg">ESG Benchmarks</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-150" href="#pricing">Pricing</a>
+</nav>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-space-sm">
+<div class="hidden sm:flex items-center gap-1.5 px-space-sm py-1 border border-outline-variant rounded-lg bg-surface-container-low text-label-sm font-label-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+<span>Cutter Feed: Online</span>
+</div>
+<a class="text-label-md font-label-md px-space-md py-1.5 text-on-surface hover:text-primary transition-colors duration-150" href="#signin">
+          Sign In
+        </a>
+<a class="text-label-md font-label-md px-space-md py-1.5 bg-primary text-on-primary hover:bg-surface-tint border border-primary rounded-lg transition-transform active:scale-[0.99] duration-100 flex items-center gap-1.5" href="#start">
+<span>Start Free Plan</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<main class="flex-1 flex flex-col justify-start">
+<section class="relative pt-space-2xl pb-space-xl px-space-lg max-w-7xl mx-auto w-full architectural-grid border-b border-outline-variant">
+<!-- Top Tagline & Telemetry Chip -->
+<div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 border border-outline-variant rounded bg-surface-container-lowest text-label-sm font-label-sm text-on-surface-variant mb-space-md">
+<span class="w-2 h-2 rounded-[1px] bg-secondary"></span>
+<span>AUTONOMOUS CAM NESTING ENGINE v4.8.2</span>
+</div>
+<h1 class="text-display-lg-mobile md:text-display-lg font-headline-lg text-primary tracking-tight mb-space-md">
+          Fabric optimization engineered for precision cutting.
+        </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed mb-space-lg">
+          Reduce textile cutting room scrap by 18%. Algorithmic 2D marker nesting, computer vision grain alignment, and instant CAM exports.
+        </p>
+<!-- CTA Cluster -->
+<div class="flex flex-wrap items-center justify-center gap-space-md w-full mb-space-lg">
+<a class="h-10 px-space-lg bg-primary text-on-primary hover:bg-surface-tint border border-primary rounded-lg font-label-md text-label-md transition-all active:scale-[0.99] flex items-center justify-center gap-2 shadow-sm" href="#signup">
+<span>Start Free Project</span>
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span>
+</a>
+<a class="h-10 px-space-lg bg-surface-container-lowest text-on-surface border border-outline-variant hover:border-outline hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-all active:scale-[0.99] flex items-center justify-center gap-2" href="#demo">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="play_circle">play_circle</span>
+<span>View Live Demo</span>
+</a>
+</div>
+<!-- Telemetry Indicators -->
+<div class="grid grid-cols-3 gap-space-sm sm:gap-space-lg border-y border-outline-variant py-space-sm w-full max-w-xl text-center">
+<div class="flex flex-col">
+<span class="font-metric-mono text-metric-mono text-primary font-semibold">+16.4%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fabric Yield</span>
+</div>
+<div class="flex flex-col border-x border-outline-variant">
+<span class="font-metric-mono text-metric-mono text-primary font-semibold">4x</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Faster Nesting</span>
+</div>
+<div class="flex flex-col">
+<span class="font-metric-mono text-metric-mono text-secondary font-semibold">0.00 mm</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Zero Kerf Overlaps</span>
+</div>
+</div>
+</div>
+<!-- Hero Visual Showcase: Interactive Marker Comparison (Before/After) -->
+<div class="max-w-5xl mx-auto bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<!-- Canvas Utility Bar -->
+<div class="px-space-md py-space-xs bg-surface-container-low border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="flex gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+</span>
+<span class="font-metric-mono text-body-sm text-on-surface-variant font-medium border-l border-outline-variant pl-3">
+              Specimen_Linen_280GSM_Roll_#819.cam
+            </span>
+</div>
+<div class="flex items-center gap-2 font-metric-mono text-label-sm">
+<span class="text-on-surface-variant">Ply: 48</span>
+<span class="text-outline">|</span>
+<span class="text-on-surface-variant">Bed: 1800mm × 3200mm</span>
+</div>
+</div>
+<!-- Before / After Grid Showcase -->
+<div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-outline-variant bg-[#FAF8F5]">
+<!-- Manual Nesting Viewport -->
+<div class="p-space-lg flex flex-col justify-between relative min-h-[300px]">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-[1px] bg-outline"></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Conventional Manual CAD</span>
+</div>
+<span class="font-metric-mono text-metric-mono px-2 py-0.5 rounded border border-outline-variant bg-surface-container-lowest text-on-surface-variant">
+                Yield: 78.2%
+              </span>
+</div>
+<!-- Vector Representation Manual Layout -->
+<div class="relative h-44 w-full border border-dashed border-outline-variant rounded bg-surface-container-lowest p-3 flex flex-wrap gap-3 items-center justify-center content-center opacity-85">
+<div class="w-24 h-14 border border-outline bg-surface-container-high rounded-[1px] flex flex-col justify-between p-1.5 transform rotate-6">
+<span class="font-metric-mono text-[9px] text-on-surface-variant">FRONT_L_40</span>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="straighten">straighten</span>
+</div>
+<div class="w-20 h-16 border border-outline bg-surface-container-high rounded-[1px] flex flex-col justify-between p-1.5 transform -rotate-12">
+<span class="font-metric-mono text-[9px] text-on-surface-variant">SLEEVE_R</span>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="straighten">straighten</span>
+</div>
+<div class="w-28 h-10 border border-outline bg-surface-container-high rounded-[1px] flex flex-col justify-between p-1.5 transform rotate-3">
+<span class="font-metric-mono text-[9px] text-on-surface-variant">COLLAR_FACING</span>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="straighten">straighten</span>
+</div>
+<!-- Scrap highlight zone -->
+<div class="w-16 h-12 border border-dashed border-secondary/40 bg-secondary-container/10 flex items-center justify-center">
+<span class="text-[9px] font-metric-mono text-secondary">21.8% SCRAP</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant border-t border-outline-variant">
+<span>Wasted Yardage: 0.84m / garment</span>
+<span class="text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="warning">warning</span>
+                Manual Drift
+              </span>
+</div>
+</div>
+<!-- Loom & Layer Algorithmic Viewport -->
+<div class="p-space-lg flex flex-col justify-between relative min-h-[300px] bg-surface-container-lowest">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-[1px] bg-secondary"></span>
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider font-semibold">Loom &amp; Layer Algorithmic Nest</span>
+</div>
+<span class="font-metric-mono text-metric-mono px-2 py-0.5 rounded border border-primary bg-primary text-on-primary font-medium">
+                Yield: 86.6% (+8.4%)
+              </span>
+</div>
+<!-- Interlocked Algorithmic Polygons -->
+<div class="relative h-44 w-full border border-outline rounded bg-surface-container-low p-2 flex items-center justify-center gap-1 overflow-hidden">
+<!-- Pattern 1 -->
+<div class="w-24 h-32 border border-primary bg-surface-container-lowest rounded-[1px] flex flex-col justify-between p-2 transform rotate-0 shadow-sm relative">
+<div class="flex justify-between items-center">
+<span class="font-metric-mono text-[10px] text-primary font-medium">FRONT_L_40</span>
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="grain">grain</span>
+</div>
+<div class="h-0.5 w-full bg-outline-variant"></div>
+<span class="font-metric-mono text-[9px] text-on-surface-variant">0.142 m²</span>
+</div>
+<!-- Pattern 2 Nested directly beside -->
+<div class="w-28 h-32 border border-primary bg-surface-container-lowest rounded-[1px] flex flex-col justify-between p-2 transform rotate-180 shadow-sm relative">
+<div class="flex justify-between items-center">
+<span class="font-metric-mono text-[10px] text-primary font-medium">FRONT_R_40</span>
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="grain">grain</span>
+</div>
+<div class="h-0.5 w-full bg-outline-variant"></div>
+<span class="font-metric-mono text-[9px] text-on-surface-variant">0.142 m²</span>
+</div>
+<!-- Interlocking sleeve and collar filling the negative space -->
+<div class="flex flex-col gap-1">
+<div class="w-24 h-16 border border-primary bg-surface-container-lowest rounded-[1px] flex flex-col justify-between p-1.5">
+<span class="font-metric-mono text-[9px] text-primary">SLEEVE_R</span>
+<span class="font-metric-mono text-[8px] text-on-surface-variant">0.088 m²</span>
+</div>
+<div class="w-24 h-14 border border-primary bg-surface-container-lowest rounded-[1px] flex flex-col justify-between p-1.5">
+<span class="font-metric-mono text-[9px] text-primary">COLLAR_FACING</span>
+<span class="font-metric-mono text-[8px] text-on-surface-variant">0.034 m²</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex justify-between items-center text-label-sm font-label-sm border-t border-outline-variant">
+<span class="text-on-surface font-medium">Clearance: 1.20mm Laser Kerf</span>
+<span class="text-primary font-metric-mono text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="check_circle">check_circle</span>
+                Grainline Validated
+              </span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Confirmation -->
+<div class="px-space-md py-space-sm bg-surface-container-high border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-2">
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+            Simulated over 12,000 meters of raw unbleached twill and combed cotton runs.
+          </p>
+<div class="flex items-center gap-space-sm">
+<span class="font-metric-mono text-label-sm text-on-surface-variant">DXF-AAMA Ready</span>
+<span class="text-outline">·</span>
+<span class="font-metric-mono text-label-sm text-on-surface-variant">Gerber GTx Compatible</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid (3 Minimalist Cards) -->
+<section class="py-space-2xl px-space-lg max-w-7xl mx-auto w-full" id="platform">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl border-b border-outline-variant pb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold block mb-1">
+            Engineered Accuracy
+          </span>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight">
+            High-acuity features for precision ateliers.
+          </h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md mt-2 md:mt-0">
+          Designed for pattern engineering teams and industrial cutting rooms where millimeter tolerances directly govern margins.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Card 1: CV Alignment -->
+<div class="bg-surface-container-lowest border border-outline-variant hover:border-outline rounded-xl p-space-lg flex flex-col justify-between transition-colors duration-150">
+<div>
+<div class="w-10 h-10 rounded border border-outline-variant bg-surface-container-low flex items-center justify-center mb-space-md text-primary">
+<span class="material-symbols-outlined" data-icon="straighten">straighten</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-space-xs font-semibold">
+              Computer Vision Alignment
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Deterministic warp &amp; weft weave detection with zero manual drift. Identifies fabric skew before blade or beam penetration.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-sm border-t border-outline-variant flex items-center justify-between font-metric-mono text-label-sm text-on-surface-variant">
+<span>Accuracy: ±0.15°</span>
+<span class="material-symbols-outlined text-sm text-primary" data-icon="center_focus_strong">center_focus_strong</span>
+</div>
+</div>
+<!-- Card 2: Multi-Angle 2D Nesting -->
+<div class="bg-surface-container-lowest border border-outline-variant hover:border-outline rounded-xl p-space-lg flex flex-col justify-between transition-colors duration-150">
+<div>
+<div class="w-10 h-10 rounded border border-outline-variant bg-surface-container-low flex items-center justify-center mb-space-md text-secondary">
+<span class="material-symbols-outlined" data-icon="auto_fix_high">auto_fix_high</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-space-xs font-semibold">
+              Multi-Angle 2D Nesting
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Algorithmic polygon packing with strict kerf clearance and grainline preservation. Evaluates 100,000 spatial permutations per second.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-sm border-t border-outline-variant flex items-center justify-between font-metric-mono text-label-sm text-on-surface-variant">
+<span>Execution: &lt; 1800ms</span>
+<span class="material-symbols-outlined text-sm text-primary" data-icon="layers">layers</span>
+</div>
+</div>
+<!-- Card 3: Direct CAM & CAD Export -->
+<div class="bg-surface-container-lowest border border-outline-variant hover:border-outline rounded-xl p-space-lg flex flex-col justify-between transition-colors duration-150">
+<div>
+<div class="w-10 h-10 rounded border border-outline-variant bg-surface-container-low flex items-center justify-center mb-space-md text-primary">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-space-xs font-semibold">
+              Direct CAM &amp; CAD Export
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Production-ready DXF-AAMA, SVG laser paths, and CNC machine G-Code formatted natively for Lectra, Gerber, and Bullmer cutters.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-sm border-t border-outline-variant flex items-center justify-between font-metric-mono text-label-sm text-on-surface-variant">
+<span>Protocols: RS-274D / G-Code</span>
+<span class="material-symbols-outlined text-sm text-primary" data-icon="file_download">file_download</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof / Impact Metrics Row -->
+<section class="bg-surface-container-low border-y border-outline-variant py-space-xl" id="esg">
+<div class="max-w-7xl mx-auto px-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg items-center">
+<div class="lg:col-span-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold block mb-1">
+              ESG Audited Yield
+            </span>
+<h4 class="text-headline-md font-headline-md text-primary">
+              Auditable sustainability in the cutting room.
+            </h4>
+</div>
+<div class="bg-surface-container-lowest p-space-md border border-outline-variant rounded-lg">
+<div class="font-metric-mono text-display-lg-mobile font-headline-lg text-primary tracking-tight">
+              142,800 m
+            </div>
+<div class="text-label-md font-label-md text-on-surface-variant mt-1">
+              Virgin Fabric Saved
+            </div>
+</div>
+<div class="bg-surface-container-lowest p-space-md border border-outline-variant rounded-lg">
+<div class="font-metric-mono text-display-lg-mobile font-headline-lg text-primary tracking-tight">
+              3.4M L
+            </div>
+<div class="text-label-md font-label-md text-on-surface-variant mt-1">
+              Industrial Water Conserved
+            </div>
+</div>
+<div class="bg-surface-container-lowest p-space-md border border-outline-variant rounded-lg">
+<div class="font-metric-mono text-display-lg-mobile font-headline-lg text-secondary tracking-tight">
+              -84.2 t
+            </div>
+<div class="text-label-md font-label-md text-on-surface-variant mt-1">
+              CO₂ Cutting Room Abatement
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Industrial Atelier Showcase Section -->
+<section class="py-space-2xl px-space-lg max-w-7xl mx-auto w-full" id="solutions">
+<div class="border border-outline-variant rounded-xl bg-surface-container-lowest p-space-lg sm:p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-xl">
+<div class="max-w-xl">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded border border-outline-variant text-label-sm font-label-sm text-on-surface-variant bg-surface-container-low mb-space-md">
+<span>CUTTER INTEGRATION</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-primary mb-space-sm tracking-tight">
+            Built for multi-ply automated table environments.
+          </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+            Eliminate trial markers and expensive nesting test drafts. Loom &amp; Layer deploys instant vector verification directly to cutting tables with deterministic G-Code validation.
+          </p>
+<div class="flex items-center gap-space-md">
+<a class="h-10 px-space-md bg-primary text-on-primary hover:bg-surface-tint border border-primary rounded-lg font-label-md text-label-md transition-all active:scale-[0.99] flex items-center gap-2" href="#start">
+<span>Deploy In Your Atelier</span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</a>
+<span class="text-label-sm font-label-sm text-on-surface-variant">No hardware replacement needed</span>
+</div>
+</div>
+<!-- Technical Telemetry Diagram -->
+<div class="w-full md:w-96 border border-outline-variant rounded-lg bg-surface-container-low p-space-md font-metric-mono text-body-sm">
+<div class="text-label-sm text-on-surface-variant pb-2 border-b border-outline-variant flex justify-between">
+<span>TELEMETRY STREAM</span>
+<span class="text-secondary font-semibold">LIVE</span>
+</div>
+<div class="py-3 space-y-2 border-b border-outline-variant">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Active Cutter:</span>
+<span class="text-primary font-medium">Kuris TC-80 CNC</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Buffer Distance:</span>
+<span class="text-primary font-medium">0.85 mm</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Grainline Tolerance:</span>
+<span class="text-primary font-medium">&lt; 0.2°</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Nesting Convergence:</span>
+<span class="text-primary font-medium">99.98%</span>
+</div>
+</div>
+<div class="pt-2 flex justify-between items-center text-label-sm">
+<span class="text-on-surface-variant">G-Code Hash:</span>
+<span class="text-outline">0x8F92..A4E</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Anchor from Shared Component Specifications verbatim -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-space-lg py-space-md max-w-7xl mx-auto gap-space-md">
+<!-- Brand & Copyright -->
+<div class="flex flex-col sm:flex-row items-center gap-space-sm text-center sm:text-left">
+<span class="text-label-md font-label-md font-medium text-primary">
+          Loom &amp; Layer
+        </span>
+<span class="hidden sm:inline text-outline-variant">|</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">
+          © 2025 Loom &amp; Layer CAD/CAM Systems. Precision Yield Protocol.
+        </span>
+</div>
+<!-- Links Cluster with style_active_navigation and style_inactive_navigation rules -->
+<div class="flex flex-wrap items-center justify-center gap-space-md font-body-sm text-body-sm">
+<a class="text-primary underline underline-offset-4 transition-colors duration-150" href="#telemetry">
+          CAM Telemetry Specs
+        </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#standards">
+          Nesting Algorithmic Standards
+        </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#compliance">
+          Fabric Yield Compliance
+        </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#terms">
+          Terms of Service
+        </a>
+</div>
+</div>
+</footer>
+</body></html>

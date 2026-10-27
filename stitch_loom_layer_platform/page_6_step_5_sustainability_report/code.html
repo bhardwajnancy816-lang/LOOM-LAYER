@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Loom &amp; Layer | Audited ESG Sustainability Benchmark</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Inter & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "on-background": "#1b1c1a",
+            "inverse-on-surface": "#f2f0ed",
+            "on-tertiary-fixed-variant": "#4b4640",
+            "surface-bright": "#fbf9f6",
+            "on-primary-fixed": "#1e1b19",
+            "outline": "#7e7570",
+            "background": "#fbf9f6",
+            "primary": "#000000",
+            "on-error-container": "#93000a",
+            "surface-tint": "#625d5b",
+            "on-primary-fixed-variant": "#4a4643",
+            "surface-variant": "#e4e2df",
+            "on-secondary-container": "#70040f",
+            "surface-dim": "#dbdad7",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#4d4540",
+            "on-tertiary-container": "#89837c",
+            "secondary": "#ab3333",
+            "primary-fixed-dim": "#ccc5c1",
+            "tertiary": "#000000",
+            "inverse-surface": "#30312f",
+            "tertiary-container": "#1f1b16",
+            "surface-container-highest": "#e4e2df",
+            "on-primary-container": "#888380",
+            "secondary-fixed-dim": "#ffb3ae",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#d0c4be",
+            "surface-container-low": "#f5f3f0",
+            "surface-container-high": "#eae8e5",
+            "on-tertiary-fixed": "#1f1b16",
+            "surface": "#fbf9f6",
+            "on-surface": "#1b1c1a",
+            "inverse-primary": "#ccc5c1",
+            "secondary-container": "#ff716c",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#410004",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#8a1b1e",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#eae1d9",
+            "surface-container": "#efeeeb",
+            "secondary-fixed": "#ffdad7",
+            "tertiary-fixed-dim": "#cdc5be",
+            "primary-fixed": "#e9e1dd",
+            "primary-container": "#1e1b19"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-md": "1.5rem",
+            "margin-lg": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "gutter-lg": "1.5rem",
+            "space-2xs": "0.125rem",
+            "space-2xl": "4rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "metric-mono": ["Inter"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "metric-mono": ["13px", {"lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "display-lg-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-full flex flex-col bg-background text-on-background antialiased selection:bg-primary selection:text-white">
+<!-- TopNavBar (Executed strictly from Shared Components JSON) -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-space-lg h-14 max-w-full sticky top-0 z-50">
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="layers">layers</span>
+<span class="text-headline-sm font-headline-lg tracking-tight font-semibold text-primary dark:text-inverse-primary">Loom &amp; Layer</span>
+</div>
+<!-- Search Input on Left -->
+<div class="hidden md:flex items-center bg-surface-container-low border border-outline-variant rounded-lg px-2.5 py-1 text-on-surface-variant w-64">
+<span class="material-symbols-outlined text-[18px] text-outline mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-0 p-0 text-body-sm font-body-sm text-on-surface focus:ring-0 w-full placeholder:text-outline outline-none" placeholder="Search markers, rolls, ESG..." type="text"/>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center space-x-5 text-label-md font-label-md pt-2">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 hover:bg-surface-container-low transition-colors duration-150" href="#">Dashboard</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 hover:bg-surface-container-low transition-colors duration-150" href="#">Cutting Plans</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 hover:bg-surface-container-low transition-colors duration-150" href="#">Garments</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 hover:bg-surface-container-low transition-colors duration-150" href="#">Fabric Inventory</a>
+<!-- Active Tab: ESG Audits -->
+<a class="border-b-2 border-primary dark:border-inverse-primary text-primary dark:text-inverse-primary font-medium pb-2" href="#">ESG Audits</a>
+</nav>
+</div>
+<!-- Trailing Actions Cluster -->
+<div class="flex items-center space-x-4">
+<div class="hidden sm:flex items-center space-x-2 px-2.5 py-1 bg-surface-container border border-outline-variant rounded-lg">
+<span class="w-2 h-2 rounded-full bg-[#2e7d32]"></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Cutter Feed: Online</span>
+</div>
+<button class="bg-primary text-on-primary border border-primary text-label-md font-label-md px-3.5 py-1.5 rounded-lg active:scale-[0.99] transition-transform duration-100 ease-out hover:bg-primary-container">
+        New Plan
+      </button>
+<div class="flex items-center space-x-1 pl-2 border-l border-outline-variant">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors" title="Settings">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+</button>
+</div>
+<div class="w-8 h-8 rounded-full border border-outline-variant overflow-hidden ml-1">
+<img class="w-full h-full object-cover" data-alt="High-acuity photographic headshot of a Lead CAM Engineer wearing technical atelier attire in a bright architectural pattern drafting studio with subtle neutral lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC946tDpSUpojuoPBB3sBVoNlStwPYGPNt5EASwvX_5OJWYBNOCk0dEMvFzoyplAe11k6DhYywMfm2FG0PNfiubvR4V90SlCO-e3qK5wuKVZFlByjp0fbcB7J6WFyfGPw9kLv9dq2aSJznv1B0HeSfF6SfBzR5V_7tzXIDUrzizZcPYHHPkaqa2K9oC9u4M5huOclEmAQybn4C5lWJI77hsN1sfMipuTI0BI1UrLURh-aXO-aVoESx-qQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+<!-- Header Block -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-outline-variant">
+<div class="space-y-2">
+<!-- Breadcrumb -->
+<div class="flex items-center space-x-2 text-label-sm font-label-sm text-on-surface-variant">
+<span>Projects</span>
+<span class="text-outline">/</span>
+<span>Bespoke Menswear Overshirt</span>
+<span class="text-outline">/</span>
+<span class="text-primary font-medium">ESG Audit</span>
+</div>
+<!-- Title & Subtitle -->
+<div class="space-y-1">
+<h1 class="text-display-lg font-display-lg text-primary tracking-tight">Audited ESG Sustainability Benchmark</h1>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-3xl">
+            Third-party verifiable material efficiency, scrap abatement, and emissions ledger.
+          </p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="inline-flex items-center space-x-2 bg-surface-container-lowest text-primary border border-outline-variant px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-surface-container-low hover:border-outline transition-all active:scale-[0.99]">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+<span>Export ESG Ledger (JSON)</span>
+</button>
+<button class="inline-flex items-center space-x-2 bg-primary text-on-primary border border-primary px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-primary-container transition-all active:scale-[0.99]">
+<span class="material-symbols-outlined text-[18px]" data-icon="print">print</span>
+<span>Print Official Certificate (PDF)</span>
+</button>
+</div>
+</div>
+<!-- Top Executive Impact Triad (3 clean, high-impact metric cards with generous padding) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Fabric Waste Abated -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg flex flex-col justify-between relative overflow-hidden group hover:border-outline transition-colors">
+<div class="flex items-start justify-between">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant">Fabric Waste Abated</span>
+<span class="p-1.5 rounded-lg bg-surface-container border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="content_cut">content_cut</span>
+</span>
+</div>
+<div class="my-6">
+<div class="flex items-baseline space-x-2">
+<span class="text-display-lg font-display-lg text-primary tracking-tight">18.4%</span>
+<span class="text-label-md font-label-md text-secondary font-medium">abated</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            0.18 m saved per overshirt • 280 GSM
+          </p>
+</div>
+<div class="pt-4 border-t border-surface-container flex items-center justify-between text-metric-mono font-metric-mono text-outline">
+<span>Target: &gt;15.0%</span>
+<span class="text-primary font-medium">Status: Optimal</span>
+</div>
+</div>
+<!-- Card 2: Freshwater Conserved -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg flex flex-col justify-between relative overflow-hidden group hover:border-outline transition-colors">
+<div class="flex items-start justify-between">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant">Freshwater Conserved</span>
+<span class="p-1.5 rounded-lg bg-surface-container border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="water_drop">water_drop</span>
+</span>
+</div>
+<div class="my-6">
+<div class="flex items-baseline space-x-2">
+<span class="text-display-lg font-display-lg text-primary tracking-tight">420</span>
+<span class="text-headline-sm font-headline-sm text-primary">Liters</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Avoided industrial dyeing &amp; finishing run
+          </p>
+</div>
+<div class="pt-4 border-t border-surface-container flex items-center justify-between text-metric-mono font-metric-mono text-outline">
+<span>Basis: Wet processing tier-2</span>
+<span class="text-primary font-medium">Batch scale: 100u</span>
+</div>
+</div>
+<!-- Card 3: CO2e Emissions Prevented -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg flex flex-col justify-between relative overflow-hidden group hover:border-outline transition-colors">
+<div class="flex items-start justify-between">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant">CO2e Emissions Prevented</span>
+<span class="p-1.5 rounded-lg bg-surface-container border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="co2">co2</span>
+</span>
+</div>
+<div class="my-6">
+<div class="flex items-baseline space-x-2">
+<span class="text-display-lg font-display-lg text-primary tracking-tight">3.2</span>
+<span class="text-headline-sm font-headline-sm text-primary">kg CO2e</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Cradle-to-gate textile lifecycle benchmark
+          </p>
+</div>
+<div class="pt-4 border-t border-surface-container flex items-center justify-between text-metric-mono font-metric-mono text-outline">
+<span>ISO 14067 footprint</span>
+<span class="text-primary font-medium">Index: Scope 3</span>
+</div>
+</div>
+</section>
+<!-- Main Benchmark Comparison Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg lg:p-space-xl space-y-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-surface-container pb-5">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline">Comparative Geometry Telemetry</span>
+<h2 class="text-headline-md font-headline-md text-primary mt-1">Nesting Yield &amp; Efficiency Variance</h2>
+</div>
+<div class="flex items-center space-x-2">
+<span class="inline-flex items-center px-3 py-1 bg-surface-container border border-outline-variant text-primary rounded-lg text-label-md font-label-md">
+            Net Delta: <strong class="ml-1 text-secondary font-semibold">+6.2% Verified Yield Gain</strong>
+</span>
+</div>
+</div>
+<!-- Comparative Progress / Ratio Visualizations -->
+<div class="space-y-6">
+<!-- Conventional Baseline Bar -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline text-body-sm font-body-sm">
+<div class="flex items-center space-x-2">
+<span class="w-3 h-3 rounded-full bg-surface-variant border border-outline"></span>
+<span class="text-on-surface font-medium">Conventional Manual Baseline</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="text-on-surface-variant">0.84m wasted per garment</span>
+<span class="font-metric-mono text-metric-mono text-on-surface font-semibold">78.6%</span>
+</div>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-lg overflow-hidden flex">
+<div class="bg-outline-variant h-full rounded-lg transition-all duration-500" style="width: 78.6%;"></div>
+<div class="bg-surface-dim h-full flex-1 opacity-60"></div>
+</div>
+</div>
+<!-- Loom & Layer Algorithmic Nest Bar -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline text-body-sm font-body-sm">
+<div class="flex items-center space-x-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-primary font-semibold">Loom &amp; Layer Algorithmic Nest</span>
+<span class="text-label-sm font-label-sm bg-surface-container-high px-2 py-0.5 rounded text-primary border border-outline-variant">High-Acuity CAM</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="text-secondary font-medium">0.21m scrap allowance</span>
+<span class="font-metric-mono text-metric-mono text-primary font-semibold">84.8%</span>
+</div>
+</div>
+<div class="w-full h-3.5 bg-surface-container-high rounded-lg overflow-hidden flex p-0.5 border border-outline-variant">
+<div class="bg-primary h-full rounded transition-all duration-500" style="width: 84.8%;"></div>
+<div class="bg-secondary-container h-full opacity-40" style="width: 15.2%;"></div>
+</div>
+</div>
+</div>
+<!-- Roll Scale Impact Box -->
+<div class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-secondary text-[24px]" data-icon="inventory_2">inventory_2</span>
+<div>
+<div class="text-label-md font-label-md font-semibold text-primary">Production Roll Impact (at 100-garment batch scale)</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Consolidated yield analysis across 5 consecutive raw selvedge bolts</div>
+</div>
+</div>
+<div class="flex items-center space-x-3 self-end md:self-auto">
+<span class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-lg font-metric-mono text-metric-mono text-primary">
+            18.0 meters preserved • $360.00 direct cloth savings
+          </span>
+</div>
+</div>
+<!-- Pattern Geometry & Scrap Analysis Visualization (Bento Detail) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-surface-container">
+<div class="space-y-3">
+<h3 class="text-label-md font-label-md uppercase tracking-wider text-outline">Tonal Geometry Allocation</h3>
+<div class="p-4 rounded-lg bg-surface-bright border border-outline-variant space-y-3">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface">Net Cut Area</span>
+<span class="font-metric-mono text-metric-mono font-medium text-primary">1.62 m² / unit</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface">Inter-Piece Geometric Gap</span>
+<span class="font-metric-mono text-metric-mono font-medium text-primary">1.2 mm (Laser-calibrated)</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface">Grainline Drift Tolerance</span>
+<span class="font-metric-mono text-metric-mono font-medium text-primary">0.08° (Max allowance 0.25°)</span>
+</div>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-label-md font-label-md uppercase tracking-wider text-outline">Scrap Reclaim Pathway</h3>
+<div class="p-4 rounded-lg bg-surface-bright border border-outline-variant space-y-3">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface">Micro-Scrap Pulverization</span>
+<span class="font-metric-mono text-metric-mono font-medium text-secondary">0.05 m² (Internal wadding)</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface">Selvedge Border Offcuts</span>
+<span class="font-metric-mono text-metric-mono font-medium text-primary">0.16 m² (Industrial circularity)</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface">Landfill Diversion Ratio</span>
+<span class="font-metric-mono text-metric-mono font-semibold text-primary">99.4% Verified</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Audit & Certification Section -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg lg:p-space-xl">
+<div class="flex items-center justify-between border-b border-surface-container pb-4 mb-6">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline">Compliance &amp; Provenance</span>
+<h2 class="text-headline-md font-headline-md text-primary mt-0.5">Verification Integrity Register</h2>
+</div>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="verified">verified</span>
+<span class="text-label-md font-label-md font-semibold text-primary">Certified Compliant</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<!-- Item 1: Protocol Standard -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant space-y-1">
+<div class="text-label-sm font-label-sm uppercase tracking-wider text-outline">Protocol Standard</div>
+<div class="text-body-md font-body-md font-medium text-primary">ISO 14044 Textile Life Cycle Assessment</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant pt-1">Accredited by Technical Textile Yield Guild</div>
+</div>
+<!-- Item 2: Verification Hash -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant space-y-1">
+<div class="text-label-sm font-label-sm uppercase tracking-wider text-outline">Verification Hash</div>
+<div class="font-metric-mono text-metric-mono text-primary font-semibold truncate" title="0x7F4A49B89028FEAC721B902">0x7F4A...B902</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant pt-1">Deterministic geometry proof via SHA-256</div>
+</div>
+<!-- Item 3: Material Spec -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant space-y-1">
+<div class="text-label-sm font-label-sm uppercase tracking-wider text-outline">Material Spec</div>
+<div class="text-body-md font-body-md font-medium text-primary">100% Raw Selvedge Linen Twill</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant pt-1">280 GSM • Bolt width 148 cm • Warp 42/2</div>
+</div>
+</div>
+<!-- Auditor Signature & Timestamp Footprint -->
+<div class="pt-6 border-t border-surface-container flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-lg border border-outline-variant bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px] text-primary" data-icon="fingerprint">fingerprint</span>
+</div>
+<div>
+<div class="text-label-md font-label-md font-semibold text-primary">Audited by Dr. Alistair Vance, CEng FTI</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Senior CAM Yield Assessor • Bureau of Apparel Circularity</div>
+<div class="text-label-sm font-label-sm text-outline mt-0.5">Signature Key: ED25519-9482-L&amp;L-SUST</div>
+</div>
+</div>
+<div class="flex flex-col md:items-end space-y-1">
+<div class="text-label-sm font-label-sm text-outline">Attestation Timestamp</div>
+<div class="font-metric-mono text-metric-mono text-primary font-semibold">2025-05-14T09:24:18.402Z</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Validated against Factory Floor CAM Controller #04</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Executed strictly from Shared Components JSON) -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline flex flex-col md:flex-row justify-between items-center w-full px-space-lg py-space-md max-w-full text-body-sm font-body-sm text-on-surface-variant mt-auto">
+<div class="text-label-md font-label-md font-medium text-primary dark:text-inverse-primary mb-3 md:mb-0">
+      © 2025 Loom &amp; Layer CAD/CAM Systems. Precision Yield Protocol.
+    </div>
+<div class="flex flex-wrap items-center justify-center gap-6 text-label-sm font-label-sm">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">CAM Telemetry Specs</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">Nesting Algorithmic Standards</a>
+<!-- Active Link for ESG context -->
+<a class="text-primary dark:text-inverse-primary underline underline-offset-4" href="#">Fabric Yield Compliance</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">Terms of Service</a>
+</div>
+</footer>
+</body></html>

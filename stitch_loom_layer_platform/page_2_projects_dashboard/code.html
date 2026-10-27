@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Loom &amp; Layer — Cutting Projects Dashboard</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "on-background": "#1b1c1a",
+            "inverse-on-surface": "#f2f0ed",
+            "on-tertiary-fixed-variant": "#4b4640",
+            "surface-bright": "#fbf9f6",
+            "on-primary-fixed": "#1e1b19",
+            "outline": "#7e7570",
+            "background": "#fbf9f6",
+            "primary": "#000000",
+            "on-error-container": "#93000a",
+            "surface-tint": "#625d5b",
+            "on-primary-fixed-variant": "#4a4643",
+            "surface-variant": "#e4e2df",
+            "on-secondary-container": "#70040f",
+            "surface-dim": "#dbdad7",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#4d4540",
+            "on-tertiary-container": "#89837c",
+            "secondary": "#ab3333",
+            "primary-fixed-dim": "#ccc5c1",
+            "tertiary": "#000000",
+            "inverse-surface": "#30312f",
+            "tertiary-container": "#1f1b16",
+            "surface-container-highest": "#e4e2df",
+            "on-primary-container": "#888380",
+            "secondary-fixed-dim": "#ffb3ae",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#d0c4be",
+            "surface-container-low": "#f5f3f0",
+            "surface-container-high": "#eae8e5",
+            "on-tertiary-fixed": "#1f1b16",
+            "surface": "#fbf9f6",
+            "on-surface": "#1b1c1a",
+            "inverse-primary": "#ccc5c1",
+            "secondary-container": "#ff716c",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#410004",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#8a1b1e",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#eae1d9",
+            "surface-container": "#efeeeb",
+            "secondary-fixed": "#ffdad7",
+            "tertiary-fixed-dim": "#cdc5be",
+            "primary-fixed": "#e9e1dd",
+            "primary-container": "#1e1b19"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-md": "1.5rem",
+            "margin-lg": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "gutter-lg": "1.5rem",
+            "space-2xs": "0.125rem",
+            "space-2xl": "4rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "metric-mono": ["Inter"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "metric-mono": ["13px", {"lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "display-lg-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .pattern-dot-grid {
+      background-image: radial-gradient(#d0c4be 0.75px, transparent 0.75px);
+      background-size: 12px 12px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TOP APP BAR (from Shared Components JSON: TopNavBar) -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-space-lg h-14 max-w-full">
+<!-- Brand & Search cluster -->
+<div class="flex items-center space-x-space-lg">
+<div class="flex items-center space-x-space-sm">
+<span class="w-5 h-5 bg-primary text-surface-container-lowest flex items-center justify-center font-metric-mono text-label-sm font-semibold rounded-none">L</span>
+<span class="text-headline-sm font-headline-lg tracking-tight font-semibold text-primary dark:text-inverse-primary">Loom &amp; Layer</span>
+</div>
+<div class="relative hidden lg:flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-outline text-[16px]">search</span>
+<input class="h-[34px] w-72 pl-8 pr-3 text-body-sm font-body-sm bg-surface-container-low border border-outline-variant rounded-lg text-primary placeholder:text-on-surface-variant focus:outline-none focus:border-primary transition-colors" placeholder="Search cut orders, markers, fabric rolls..." type="text"/>
+<span class="absolute right-2 font-metric-mono text-label-sm text-outline border border-outline-variant px-1 rounded bg-surface-container-lowest">⌘K</span>
+</div>
+</div>
+<!-- Center Navigation Links (Exact from JSON: TopNavBar) -->
+<nav class="hidden md:flex items-center space-x-space-lg h-full pt-2">
+<!-- Active link: Dashboard -->
+<a class="border-b-2 border-primary dark:border-inverse-primary text-primary dark:text-inverse-primary font-medium pb-2 text-label-md font-label-md transition-colors duration-150" href="#dashboard">
+          Dashboard
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 text-label-md font-label-md transition-colors duration-150" href="#cutting-plans">
+          Cutting Plans
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 text-label-md font-label-md transition-colors duration-150" href="#garments">
+          Garments
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 text-label-md font-label-md transition-colors duration-150" href="#fabric-inventory">
+          Fabric Inventory
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-normal pb-2 text-label-md font-label-md transition-colors duration-150" href="#esg-audits">
+          ESG Audits
+        </a>
+</nav>
+<!-- Trailing Action Cluster (JSON specs) -->
+<div class="flex items-center space-x-space-md">
+<!-- Trailing secondary action: Status badge -->
+<div class="hidden sm:flex items-center space-x-1.5 px-2.5 py-1 bg-surface-container-low border border-outline-variant rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-metric-mono text-label-sm text-primary">Cutter Feed: Online</span>
+</div>
+<!-- Trailing Icon Actions -->
+<div class="flex items-center space-x-1 border-l border-outline-variant pl-space-sm ml-space-xs">
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded transition-colors duration-150" title="Tune Cam Parameters">
+<span class="material-symbols-outlined">tune</span>
+</button>
+<button class="w-8 h-8 relative flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded transition-colors duration-150" title="Alerts &amp; Feed">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-secondary rounded-full"></span>
+</button>
+</div>
+<!-- Profile Avatar -->
+<div class="flex items-center pl-space-xs border-l border-outline-variant">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center text-primary font-metric-mono text-label-sm font-semibold overflow-hidden" title="Lead CAM Engineer Profile Avatar">
+            EM
+          </div>
+</div>
+<!-- Trailing primary action: New Plan -->
+<button class="hidden lg:inline-flex items-center space-x-1.5 bg-primary text-surface-container-lowest border border-primary px-3 py-1.5 rounded-lg font-label-md text-label-md hover:bg-inverse-surface active:scale-[0.99] transition-transform duration-100 ease-out">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>New Plan</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN VIEWPORT -->
+<main class="flex-1 w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-space-lg py-space-lg">
+<!-- SUB-HEADER SECTION -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-space-lg mb-space-lg border-b border-outline-variant">
+<!-- Sub-header Title & Count -->
+<div class="flex items-baseline space-x-3">
+<h1 class="text-headline-md font-headline-md text-primary tracking-tight">Cutting Projects</h1>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-metric-mono text-label-sm bg-surface-container border border-outline-variant text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block mr-1.5"></span>
+          4 Active Runs
+        </span>
+</div>
+<!-- Controls: Search bar, Status Filter pills, Primary Button -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Compact contextual search -->
+<div class="relative flex-1 sm:flex-initial">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[16px]">search</span>
+<input class="h-9 w-full sm:w-56 pl-8 pr-3 text-body-sm font-body-sm bg-surface-container-lowest border border-outline-variant rounded-lg text-primary placeholder:text-outline focus:outline-none focus:border-primary transition-colors" placeholder="Filter active markers..." type="text"/>
+</div>
+<!-- Status Filter pills -->
+<div class="inline-flex items-center p-0.5 bg-surface-container rounded-lg border border-outline-variant text-label-sm font-label-sm">
+<button class="px-3 py-1 bg-surface-container-lowest text-primary rounded font-semibold border border-outline-variant/60 shadow-sm transition-all">
+            All
+          </button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-primary transition-colors">
+            In Progress
+          </button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-primary transition-colors">
+            Cut Ready
+          </button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-primary transition-colors">
+            Completed
+          </button>
+</div>
+<!-- Action Button: + New Cut Plan -->
+<button class="inline-flex items-center space-x-1.5 bg-primary text-surface-container-lowest border border-primary px-3.5 h-9 rounded-lg font-label-md text-label-md hover:bg-inverse-surface active:scale-[0.99] transition-transform duration-100 ease-out">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>+ New Cut Plan</span>
+</button>
+</div>
+</section>
+<!-- TOP METRIC CARDS (3 clean cards in horizontal row, spacious & crisp) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-space-md mb-space-xl">
+<!-- Metric 1: Avg. Marker Yield -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg flex flex-col justify-between hover:border-outline transition-colors">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-label-md font-label-md tracking-wider">Avg. Marker Yield</span>
+<span class="material-symbols-outlined text-outline text-[18px]">pie_chart</span>
+</div>
+<div class="flex items-baseline space-x-3 my-1">
+<span class="text-headline-lg font-headline-lg text-primary tracking-tight">84.6%</span>
+<span class="inline-flex items-center text-label-sm font-metric-mono text-primary bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant">
+<span class="material-symbols-outlined text-[12px] mr-0.5 text-secondary">arrow_upward</span>
+            +5.8% vs benchmark
+          </span>
+</div>
+<div class="w-full bg-surface-container-low h-1 rounded-full overflow-hidden mt-3">
+<div class="bg-primary h-full rounded-full" style="width: 84.6%;"></div>
+</div>
+</div>
+<!-- Metric 2: Fabric Preserved -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg flex flex-col justify-between hover:border-outline transition-colors">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-label-md font-label-md tracking-wider">Fabric Preserved</span>
+<span class="material-symbols-outlined text-outline text-[18px]">straighten</span>
+</div>
+<div class="flex items-baseline space-x-3 my-1">
+<span class="text-headline-lg font-headline-lg text-primary tracking-tight">1,420 m</span>
+<span class="text-label-sm font-metric-mono text-outline">
+            This Month
+          </span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-outline-variant/60 text-body-sm font-body-sm text-on-surface-variant">
+<span>Algorithmic waste reduction</span>
+<span class="font-metric-mono text-primary font-medium">-18.4% off-cut</span>
+</div>
+</div>
+<!-- Metric 3: Active CAM Cutters -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg flex flex-col justify-between hover:border-outline transition-colors">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-label-md font-label-md tracking-wider">Active CAM Cutters</span>
+<span class="material-symbols-outlined text-outline text-[18px]">precision_manufacturing</span>
+</div>
+<div class="flex items-baseline space-x-3 my-1">
+<span class="text-headline-lg font-headline-lg text-primary tracking-tight">3 Online</span>
+<span class="inline-flex items-center text-label-sm font-metric-mono text-secondary bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant">
+            Feed 180 cm/s
+          </span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-outline-variant/60 text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center space-x-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Spool: Gerber G-300</span>
+</span>
+<span class="font-metric-mono text-outline">0 Buffer Queued</span>
+</div>
+</div>
+</section>
+<!-- SECTION TITLE: PROJECTS GRID -->
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center space-x-2">
+<h2 class="text-headline-sm font-headline-sm text-primary">Active Cutting Layouts</h2>
+<span class="text-label-sm font-metric-mono text-outline">Sorted by Yield Optimization</span>
+</div>
+<div class="flex items-center space-x-2">
+<button class="p-1 text-on-surface-variant hover:text-primary rounded border border-outline-variant bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1 text-outline hover:text-primary rounded border border-transparent">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+</button>
+</div>
+</div>
+<!-- PROJECTS GRID (4 Clean Minimalist Cards with whitespace and tactile details) -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-lg mb-space-2xl">
+<!-- CARD 1: Menswear Overshirt -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col justify-between overflow-hidden hover:border-primary transition-all duration-150">
+<!-- Card Header -->
+<div class="p-space-md border-b border-outline-variant">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-metric-mono text-label-sm px-2 py-0.5 rounded bg-surface-container-low border border-outline-variant text-primary font-medium">
+              Cut Ready
+            </span>
+<button class="text-outline hover:text-primary p-1" title="Options">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary truncate">Menswear Overshirt</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Navy Linen Twill</p>
+</div>
+<!-- Technical CAD Visual Thumbnail -->
+<div class="relative h-44 bg-surface-container-low pattern-dot-grid flex items-center justify-center p-3 border-b border-outline-variant overflow-hidden">
+<!-- Marker bounding representation -->
+<div class="w-full h-full border border-dashed border-outline-variant rounded flex flex-col justify-between p-2 relative bg-surface-container-lowest/60">
+<!-- Simulated nested pattern outlines -->
+<div class="flex space-x-1.5 h-3/5 items-end">
+<div class="w-1/3 h-full border border-primary/80 bg-surface-container-low rounded-sm relative flex items-center justify-center">
+<span class="text-[9px] font-metric-mono text-outline">FR-L</span>
+</div>
+<div class="w-1/3 h-4/5 border border-primary/80 bg-surface-container-low rounded-sm relative flex items-center justify-center">
+<span class="text-[9px] font-metric-mono text-outline">BK</span>
+</div>
+<div class="w-1/3 h-full border border-primary/80 bg-surface-container-low rounded-sm relative flex items-center justify-center">
+<span class="text-[9px] font-metric-mono text-outline">SLV</span>
+</div>
+</div>
+<div class="flex space-x-1.5 h-1/3 items-start">
+<div class="w-1/2 h-full border border-primary/70 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[8px] font-metric-mono text-outline">YOKE</span>
+</div>
+<div class="w-1/4 h-3/4 border border-primary/70 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[8px] font-metric-mono text-outline">COL</span>
+</div>
+<div class="w-1/4 h-3/4 border border-primary/70 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[8px] font-metric-mono text-outline">CUFF</span>
+</div>
+</div>
+<!-- Grainline indicator line -->
+<div class="absolute bottom-1 right-2 flex items-center space-x-1">
+<span class="material-symbols-outlined text-[12px] text-outline">east</span>
+<span class="text-[9px] font-metric-mono text-outline">0° Warp</span>
+</div>
+</div>
+</div>
+<!-- Marker Metrics & Roll Dimensions -->
+<div class="p-space-md space-y-2">
+<div class="grid grid-cols-2 gap-2 text-body-sm">
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Roll Geometry</span>
+<span class="font-metric-mono text-metric-mono text-primary">150 × 500 cm</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Nest Count</span>
+<span class="font-metric-mono text-metric-mono text-primary">9 pieces</span>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Efficiency</span>
+<span class="font-metric-mono text-headline-sm font-semibold text-primary">84.8%</span>
+</div>
+<span class="text-label-sm font-metric-mono text-outline bg-surface-container px-2 py-0.5 rounded">
+              High Yield
+            </span>
+</div>
+</div>
+<!-- Card Action -->
+<div class="p-space-md pt-0">
+<button class="w-full h-9 flex items-center justify-center space-x-2 bg-surface-container-lowest border border-outline-variant text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-low hover:border-primary transition-all">
+<span>Open Plan</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: Tailored Wool Blazer -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col justify-between overflow-hidden hover:border-primary transition-all duration-150">
+<!-- Card Header -->
+<div class="p-space-md border-b border-outline-variant">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-metric-mono text-label-sm px-2 py-0.5 rounded bg-surface-container-low border border-outline-variant text-secondary font-medium">
+              In Progress
+            </span>
+<button class="text-outline hover:text-primary p-1" title="Options">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary truncate">Tailored Wool Blazer</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Charcoal Melange</p>
+</div>
+<!-- Technical CAD Visual Thumbnail -->
+<div class="relative h-44 bg-surface-container-low pattern-dot-grid flex items-center justify-center p-3 border-b border-outline-variant overflow-hidden">
+<div class="w-full h-full border border-dashed border-outline-variant rounded flex flex-col justify-between p-2 relative bg-surface-container-lowest/60">
+<!-- Simulated nested blazer parts -->
+<div class="flex space-x-1 h-2/3 items-end">
+<div class="w-1/4 h-full border border-primary/80 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[8px] font-metric-mono text-outline">LAP-L</span>
+</div>
+<div class="w-1/4 h-5/6 border border-primary/80 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[8px] font-metric-mono text-outline">FRT</span>
+</div>
+<div class="w-1/4 h-full border border-primary/80 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[8px] font-metric-mono text-outline">BK-P</span>
+</div>
+<div class="w-1/4 h-4/5 border border-primary/80 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[8px] font-metric-mono text-outline">USLV</span>
+</div>
+</div>
+<div class="flex space-x-1 h-1/4 items-start">
+<div class="w-1/3 h-full border border-primary/70 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[7px] font-metric-mono text-outline">LSLV</span>
+</div>
+<div class="w-1/3 h-full border border-primary/70 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[7px] font-metric-mono text-outline">FACING</span>
+</div>
+<div class="w-1/3 h-full border border-primary/70 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[7px] font-metric-mono text-outline">WELT</span>
+</div>
+</div>
+<!-- Cutter Progress bar simulation -->
+<div class="absolute inset-x-0 bottom-0 h-1 bg-surface-container-high">
+<div class="bg-secondary h-full" style="width: 62%;"></div>
+</div>
+</div>
+</div>
+<!-- Marker Metrics & Roll Dimensions -->
+<div class="p-space-md space-y-2">
+<div class="grid grid-cols-2 gap-2 text-body-sm">
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Roll Geometry</span>
+<span class="font-metric-mono text-metric-mono text-primary">140 × 600 cm</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Nest Count</span>
+<span class="font-metric-mono text-metric-mono text-primary">14 pieces</span>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Efficiency</span>
+<span class="font-metric-mono text-headline-sm font-semibold text-primary">82.1%</span>
+</div>
+<span class="text-label-sm font-metric-mono text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+              Plaid Match
+            </span>
+</div>
+</div>
+<!-- Card Action -->
+<div class="p-space-md pt-0">
+<button class="w-full h-9 flex items-center justify-center space-x-2 bg-surface-container-lowest border border-outline-variant text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-low hover:border-primary transition-all">
+<span>Open Plan</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: Relaxed Chino Trouser -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col justify-between overflow-hidden hover:border-primary transition-all duration-150">
+<!-- Card Header -->
+<div class="p-space-md border-b border-outline-variant">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-metric-mono text-label-sm px-2 py-0.5 rounded bg-surface-container-low border border-outline-variant text-primary font-medium">
+              Cut Ready
+            </span>
+<button class="text-outline hover:text-primary p-1" title="Options">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary truncate">Relaxed Chino Trouser</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Khaki Cotton Twill</p>
+</div>
+<!-- Technical CAD Visual Thumbnail -->
+<div class="relative h-44 bg-surface-container-low pattern-dot-grid flex items-center justify-center p-3 border-b border-outline-variant overflow-hidden">
+<div class="w-full h-full border border-dashed border-outline-variant rounded flex flex-col justify-between p-2 relative bg-surface-container-lowest/60">
+<!-- Simulated trouser pieces -->
+<div class="flex space-x-2 h-3/4 items-end">
+<div class="w-1/2 h-full border border-primary/80 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[9px] font-metric-mono text-outline">LEG-FRONT</span>
+</div>
+<div class="w-1/2 h-full border border-primary/80 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[9px] font-metric-mono text-outline">LEG-BACK</span>
+</div>
+</div>
+<div class="flex space-x-1 h-1/5 items-start">
+<div class="w-1/3 h-full border border-primary/70 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[7px] font-metric-mono text-outline">WAIST</span>
+</div>
+<div class="w-1/3 h-full border border-primary/70 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[7px] font-metric-mono text-outline">PKT-BAG</span>
+</div>
+<div class="w-1/3 h-full border border-primary/70 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[7px] font-metric-mono text-outline">FLY</span>
+</div>
+</div>
+<!-- Direction vector marker -->
+<div class="absolute top-2 right-2">
+<span class="material-symbols-outlined text-[13px] text-outline">north</span>
+</div>
+</div>
+</div>
+<!-- Marker Metrics & Roll Dimensions -->
+<div class="p-space-md space-y-2">
+<div class="grid grid-cols-2 gap-2 text-body-sm">
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Roll Geometry</span>
+<span class="font-metric-mono text-metric-mono text-primary">160 × 450 cm</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Nest Count</span>
+<span class="font-metric-mono text-metric-mono text-primary">8 pieces</span>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Efficiency</span>
+<span class="font-metric-mono text-headline-sm font-semibold text-primary">87.3%</span>
+</div>
+<span class="text-label-sm font-metric-mono text-primary bg-surface-container px-2 py-0.5 rounded font-medium">
+              Optimal
+            </span>
+</div>
+</div>
+<!-- Card Action -->
+<div class="p-space-md pt-0">
+<button class="w-full h-9 flex items-center justify-center space-x-2 bg-surface-container-lowest border border-outline-variant text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-low hover:border-primary transition-all">
+<span>Open Plan</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- CARD 4: Oversized Poplin Shirt -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col justify-between overflow-hidden hover:border-primary transition-all duration-150">
+<!-- Card Header -->
+<div class="p-space-md border-b border-outline-variant">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-metric-mono text-label-sm px-2 py-0.5 rounded bg-surface-container-low border border-outline-variant text-outline font-medium">
+              Completed
+            </span>
+<button class="text-outline hover:text-primary p-1" title="Options">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary truncate">Oversized Poplin Shirt</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Crisp White Cotton</p>
+</div>
+<!-- Technical CAD Visual Thumbnail -->
+<div class="relative h-44 bg-surface-container-low pattern-dot-grid flex items-center justify-center p-3 border-b border-outline-variant overflow-hidden opacity-90">
+<div class="w-full h-full border border-dashed border-outline-variant rounded flex flex-col justify-between p-2 relative bg-surface-container-lowest/60">
+<!-- Simulated poplin nested items -->
+<div class="flex space-x-1.5 h-3/5 items-end">
+<div class="w-1/3 h-full border border-primary/60 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[9px] font-metric-mono text-outline">FRT</span>
+</div>
+<div class="w-1/3 h-5/6 border border-primary/60 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[9px] font-metric-mono text-outline">BACK</span>
+</div>
+<div class="w-1/3 h-full border border-primary/60 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[9px] font-metric-mono text-outline">SLV</span>
+</div>
+</div>
+<div class="flex space-x-1 h-1/3 items-start">
+<div class="w-1/4 h-3/4 border border-primary/60 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[7px] font-metric-mono text-outline">BAND</span>
+</div>
+<div class="w-1/4 h-3/4 border border-primary/60 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[7px] font-metric-mono text-outline">COLL</span>
+</div>
+<div class="w-1/4 h-3/4 border border-primary/60 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[7px] font-metric-mono text-outline">CUFF</span>
+</div>
+<div class="w-1/4 h-3/4 border border-primary/60 bg-surface-container-low rounded-sm flex items-center justify-center">
+<span class="text-[7px] font-metric-mono text-outline">PLKT</span>
+</div>
+</div>
+<!-- Completed badge watermark -->
+<div class="absolute inset-0 flex items-center justify-center bg-surface-container-lowest/40 pointer-events-none">
+<span class="font-metric-mono text-[10px] text-outline border border-outline-variant bg-surface-container-lowest px-2 py-0.5 rounded">Archived G-Code</span>
+</div>
+</div>
+</div>
+<!-- Marker Metrics & Roll Dimensions -->
+<div class="p-space-md space-y-2">
+<div class="grid grid-cols-2 gap-2 text-body-sm">
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Roll Geometry</span>
+<span class="font-metric-mono text-metric-mono text-primary">145 × 500 cm</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Nest Count</span>
+<span class="font-metric-mono text-metric-mono text-primary">11 pieces</span>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-outline block">Efficiency</span>
+<span class="font-metric-mono text-headline-sm font-semibold text-primary">85.0%</span>
+</div>
+<span class="text-label-sm font-metric-mono text-outline bg-surface-container px-2 py-0.5 rounded">
+              Spool Done
+            </span>
+</div>
+</div>
+<!-- Card Action -->
+<div class="p-space-md pt-0">
+<button class="w-full h-9 flex items-center justify-center space-x-2 bg-surface-container-lowest border border-outline-variant text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-low hover:border-primary transition-all">
+<span>Open Plan</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+</section>
+<!-- LIVE CAM CUTTING FEED STRIP (Tactile Atelier Architectural Detail) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-outline-variant flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<span class="text-headline-sm font-headline-sm text-primary">Gerber Z1 High-Ply Cutter</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Active execution: Plan #CP-9021 • Tailored Wool Blazer • Spooling block 4 of 8</p>
+</div>
+</div>
+<div class="flex items-center space-x-4 w-full md:w-auto justify-between md:justify-end">
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-outline block">Feed Rate</span>
+<span class="font-metric-mono text-metric-mono text-primary">180 cm/s (Nominal)</span>
+</div>
+<button class="h-9 px-4 bg-surface-container-low border border-outline-variant hover:border-primary rounded-lg font-label-md text-label-md text-primary transition-colors">
+          View Telemetry
+        </button>
+</div>
+</section>
+</main>
+<!-- FOOTER (Exact from Shared Components JSON: Footer) -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-space-lg py-space-md max-w-full gap-4">
+<!-- Copyright text -->
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline-variant">
+        © 2025 Loom &amp; Layer CAD/CAM Systems. Precision Yield Protocol.
+      </p>
+<!-- Footer links (Exact from JSON) -->
+<div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-label-sm font-label-sm">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#telemetry">
+          CAM Telemetry Specs
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#algorithmic-standards">
+          Nesting Algorithmic Standards
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#compliance">
+          Fabric Yield Compliance
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#tos">
+          Terms of Service
+        </a>
+</div>
+</div>
+</footer>
+</body></html>

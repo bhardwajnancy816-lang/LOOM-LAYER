@@ -1,0 +1,549 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-fabric-grid: rgba(215, 199, 178, 0.55);
+    --color-fabric-bg: #faf6f0;
+    --color-stitch: #9e2a2b;
+  }
+
+  body {
+    background-color: #faf6f0;
+    color: #241c1a;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Bespoke Atelier Editorial Typography */
+  .font-editorial {
+    font-family: "Fraunces", "Newsreader", Georgia, serif;
+    font-variation-settings: "opsz" 36, "SOFT" 20;
+    letter-spacing: -0.02em;
+  }
+
+  .font-editorial-italic {
+    font-family: "Fraunces", "Newsreader", Georgia, serif;
+    font-style: italic;
+    font-variation-settings: "opsz" 36, "SOFT" 40;
+  }
+}
+
+/* ========================================================================= */
+/* CLOTH & TEXTILE TEXTURES                                                  */
+/* ========================================================================= */
+
+/* Tailor's cream linen canvas weave texture */
+.fabric-weave-pattern {
+  background-color: #faf6f0;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(163, 141, 116, 0.28) 1px, transparent 0),
+    linear-gradient(rgba(215, 199, 178, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(215, 199, 178, 0.15) 1px, transparent 1px);
+  background-size: 16px 16px, 32px 32px, 32px 32px;
+}
+
+.fabric-blueprint-pattern {
+  background-color: #1e1614;
+  background-image: 
+    linear-gradient(rgba(184, 50, 50, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 50, 50, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Running basting stitch lines */
+.tailor-basting-stitch {
+  border-style: dashed;
+  border-width: 1.5px;
+  border-color: #9e2a2b;
+}
+
+.tailor-chalk-mark {
+  border-bottom: 2px dashed rgba(194, 85, 55, 0.5);
+}
+
+/* Fabric grain directions */
+.fabric-grain-vertical {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 19px,
+    rgba(163, 141, 116, 0.22) 20px
+  );
+}
+
+.fabric-grain-horizontal {
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 19px,
+    rgba(163, 141, 116, 0.22) 20px
+  );
+}
+
+/* ========================================================================= */
+/* CLOTH BUTTON DESIGN SYSTEM                                                */
+/* Styled like tailored cloth patches, woven fabric swatches & basting seams */
+/* ========================================================================= */
+
+.cloth-btn-base {
+  position: relative;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Tactile inner thread stitch for all cloth buttons */
+.cloth-btn-base::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: calc(0.5rem - 3px);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+/* Crimson Woven Cloth Button (Primary) */
+.cloth-btn-primary {
+  background-color: #9e2a2b;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 0),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(0, 0, 0, 0.12) 100%);
+  background-size: 4px 4px, 100% 100%;
+  color: #fffaf0;
+  border: 1px solid #7d1c1d;
+  box-shadow: 0 1px 3px rgba(110, 20, 20, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cloth-btn-primary::before {
+  border: 1px dashed rgba(255, 240, 230, 0.45);
+}
+
+.cloth-btn-primary:hover:not(:disabled) {
+  background-color: #b23032;
+  box-shadow: 0 3px 8px rgba(110, 20, 20, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.cloth-btn-primary:hover:not(:disabled)::before {
+  border-color: rgba(255, 245, 240, 0.7);
+}
+
+.cloth-btn-primary:active:not(:disabled) {
+  background-color: #841e1f;
+  transform: translateY(0);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Cream Linen Swatch Button (Outline) */
+.cloth-btn-outline {
+  background-color: #fdfbf7;
+  background-image: 
+    radial-gradient(rgba(163, 141, 116, 0.12) 1px, transparent 0);
+  background-size: 5px 5px;
+  color: #561f1f;
+  border: 1px solid #e2d5c4;
+  box-shadow: 0 1px 2px rgba(44, 34, 30, 0.05);
+}
+
+.cloth-btn-outline::before {
+  border: 1px dashed rgba(158, 42, 43, 0.35);
+}
+
+.cloth-btn-outline:hover:not(:disabled) {
+  background-color: #f7eee2;
+  border-color: #cbb8a0;
+  color: #891e1e;
+  transform: translateY(-1px);
+}
+
+.cloth-btn-outline:hover:not(:disabled)::before {
+  border-color: rgba(158, 42, 43, 0.65);
+}
+
+.cloth-btn-outline:active:not(:disabled) {
+  background-color: #ede2d3;
+  transform: translateY(0);
+}
+
+/* Espresso Leather / Heavy Wool Swatch (Secondary) */
+.cloth-btn-secondary {
+  background-color: #2c221e;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: 4px 4px;
+  color: #faf6f0;
+  border: 1px solid #1a1411;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cloth-btn-secondary::before {
+  border: 1px dashed rgba(212, 163, 115, 0.4);
+}
+
+.cloth-btn-secondary:hover:not(:disabled) {
+  background-color: #3b2e29;
+  transform: translateY(-1px);
+}
+
+.cloth-btn-secondary:hover:not(:disabled)::before {
+  border-color: rgba(212, 163, 115, 0.7);
+}
+
+.cloth-btn-secondary:active:not(:disabled) {
+  background-color: #1e1714;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar (warm ecru thumb) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4ede2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d7c7b2;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #beaa92;
+}
+
+/* ========================================================================= */
+/* DARK MODE THEME EXTENSION (Rich Deep Bordeaux & Espresso Atelier)        */
+/* Complete contrast & crisp readability for night mode                      */
+/* ========================================================================= */
+
+html.dark,
+html.dark body {
+  background-color: #140f0d !important;
+  color: #fbf7f0 !important;
+}
+
+/* Background layers */
+html.dark .bg-cream-25,
+html.dark .bg-cream-50,
+html.dark .min-h-screen.bg-cream-50,
+html.dark div[class*="bg-cream-50"] {
+  background-color: #140f0d !important;
+}
+
+html.dark .bg-cream-50\/60 {
+  background-color: rgba(20, 15, 13, 0.6) !important;
+}
+
+html.dark .bg-cream-50\/70 {
+  background-color: rgba(20, 15, 13, 0.7) !important;
+}
+
+html.dark .bg-cream-50\/95 {
+  background-color: rgba(20, 15, 13, 0.95) !important;
+}
+
+html.dark .bg-white {
+  background-color: #1e1613 !important;
+}
+
+html.dark .bg-white\/80 {
+  background-color: rgba(30, 22, 19, 0.8) !important;
+}
+
+html.dark .bg-white\/90 {
+  background-color: rgba(30, 22, 19, 0.9) !important;
+}
+
+html.dark .bg-cream-100,
+html.dark .bg-cream-100\/60,
+html.dark .bg-cream-100\/70,
+html.dark .bg-cream-100\/80,
+html.dark .bg-cream-100\/90 {
+  background-color: #1d1512 !important;
+}
+
+html.dark .bg-cream-200,
+html.dark .bg-cream-200\/70,
+html.dark .bg-cream-200\/80 {
+  background-color: #271d18 !important;
+}
+
+html.dark .bg-cream-300 {
+  background-color: #342620 !important;
+}
+
+html.dark .bg-stone-50,
+html.dark .bg-stone-50\/50,
+html.dark .bg-stone-50\/70,
+html.dark .bg-stone-50\/80,
+html.dark .bg-stone-50\/90 {
+  background-color: #1a1310 !important;
+}
+
+html.dark .bg-stone-100,
+html.dark .bg-stone-100\/70,
+html.dark .bg-stone-100\/80 {
+  background-color: #241b17 !important;
+}
+
+html.dark .bg-stone-200 {
+  background-color: #332620 !important;
+}
+
+/* Fabric weave canvas texture in night mode */
+html.dark .fabric-weave-pattern {
+  background-color: #140f0d !important;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(163, 141, 116, 0.16) 1px, transparent 0),
+    linear-gradient(rgba(184, 50, 50, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 50, 50, 0.08) 1px, transparent 1px) !important;
+}
+
+/* Borders & Separators */
+html.dark .border-cream-100,
+html.dark .border-cream-200,
+html.dark .border-cream-300,
+html.dark .border-cream-400,
+html.dark .border-stone-100,
+html.dark .border-stone-200,
+html.dark .border-stone-200\/80,
+html.dark .border-stone-200\/90,
+html.dark .border-stone-300,
+html.dark .border-stone-400 {
+  border-color: #382a23 !important;
+}
+
+html.dark .divide-cream-200 > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-stone-200 > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-cream-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #382a23 !important;
+}
+
+/* Typography with crystal-clear contrast */
+html.dark .text-atelier-950,
+html.dark .text-atelier-900,
+html.dark .text-atelier-800,
+html.dark .text-stone-950,
+html.dark .text-stone-900 {
+  color: #fbf7f0 !important;
+}
+
+html.dark .text-stone-800,
+html.dark .text-stone-700,
+html.dark .text-atelier-700 {
+  color: #e8ded1 !important;
+}
+
+html.dark .text-stone-600,
+html.dark .text-atelier-600 {
+  color: #d2c3b1 !important;
+}
+
+html.dark .text-stone-500,
+html.dark .text-atelier-500 {
+  color: #b7a492 !important;
+}
+
+html.dark .text-stone-400 {
+  color: #9d8a7a !important;
+}
+
+/* Vibrant, readable crimson / red in dark mode */
+html.dark .text-crimson-950,
+html.dark .text-crimson-900,
+html.dark .text-crimson-800,
+html.dark .text-crimson-700,
+html.dark .text-crimson-600,
+html.dark .text-red-950,
+html.dark .text-red-900,
+html.dark .text-red-800,
+html.dark .text-rose-600 {
+  color: #f59e9e !important;
+}
+
+html.dark .text-amber-950,
+html.dark .text-amber-900,
+html.dark .text-amber-800 {
+  color: #fcd34d !important;
+}
+
+html.dark .text-emerald-900,
+html.dark .text-emerald-800,
+html.dark .text-emerald-700 {
+  color: #6ee7b7 !important;
+}
+
+/* Accent Containers & Badges */
+html.dark .bg-crimson-50,
+html.dark .bg-crimson-50\/50,
+html.dark .bg-crimson-50\/70,
+html.dark .bg-crimson-100,
+html.dark .bg-crimson-100\/80,
+html.dark .bg-red-50,
+html.dark .bg-red-50\/40,
+html.dark .bg-red-100 {
+  background-color: rgba(158, 42, 43, 0.28) !important;
+  border-color: rgba(220, 75, 75, 0.35) !important;
+}
+
+html.dark .bg-amber-50,
+html.dark .bg-amber-50\/40,
+html.dark .bg-amber-100,
+html.dark .bg-amber-100\/70 {
+  background-color: rgba(194, 142, 58, 0.24) !important;
+  border-color: rgba(212, 163, 115, 0.35) !important;
+}
+
+html.dark .border-crimson-200,
+html.dark .border-crimson-300,
+html.dark .border-red-200,
+html.dark .border-amber-200 {
+  border-color: rgba(220, 75, 75, 0.35) !important;
+}
+
+/* Interactive Hover States */
+html.dark .hover\:bg-cream-50\/70:hover,
+html.dark .hover\:bg-cream-100:hover,
+html.dark .hover\:bg-cream-200:hover,
+html.dark .hover\:bg-stone-50:hover,
+html.dark .hover\:bg-stone-100:hover {
+  background-color: #271e19 !important;
+}
+
+html.dark .hover\:text-atelier-950:hover,
+html.dark .hover\:text-stone-900:hover,
+html.dark .hover\:text-stone-950:hover {
+  color: #ffffff !important;
+}
+
+html.dark .hover\:text-crimson-800:hover,
+html.dark .hover\:text-crimson-950:hover {
+  color: #ffb3b3 !important;
+}
+
+/* Outline Cloth Button */
+html.dark .cloth-btn-outline {
+  background-color: #221a16 !important;
+  background-image: radial-gradient(rgba(215, 199, 178, 0.08) 1px, transparent 0) !important;
+  color: #fbf7f0 !important;
+  border-color: #4a362c !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark .cloth-btn-outline::before {
+  border-color: rgba(210, 72, 72, 0.45) !important;
+}
+
+html.dark .cloth-btn-outline:hover:not(:disabled) {
+  background-color: #2e221d !important;
+  border-color: #634b3e !important;
+  color: #ffffff !important;
+}
+
+html.dark .cloth-btn-outline:hover:not(:disabled)::before {
+  border-color: rgba(210, 72, 72, 0.75) !important;
+}
+
+html.dark .cloth-btn-outline:active:not(:disabled) {
+  background-color: #1c1411 !important;
+}
+
+/* Secondary Cloth Button */
+html.dark .cloth-btn-secondary {
+  background-color: #241c18 !important;
+  border-color: #3d2d26 !important;
+  color: #fbf7f0 !important;
+}
+
+html.dark .cloth-btn-secondary:hover:not(:disabled) {
+  background-color: #30241f !important;
+  border-color: #523e34 !important;
+}
+
+/* Form Inputs, Selects, and Textareas */
+html.dark input:not([type="checkbox"]):not([type="radio"]),
+html.dark select,
+html.dark textarea {
+  background-color: #1e1613 !important;
+  color: #fbf7f0 !important;
+  border-color: #3d2e27 !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #9d8a7a !important;
+}
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  border-color: #9e2a2b !important;
+  box-shadow: 0 0 0 2px rgba(158, 42, 43, 0.3) !important;
+}
+
+/* Modal Dialog Surface */
+html.dark .bg-atelier-950\/60 {
+  background-color: rgba(10, 7, 6, 0.75) !important;
+}
+
+/* Rulers and Canvas Scrollbars in Dark Mode */
+html.dark ::-webkit-scrollbar-track {
+  background: #1c1512;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #3d2e27;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #523e34;
+}
+
+/* Fabric Canvas & Rulers in Night Mode */
+html.dark svg.fabric-weave-pattern rect[fill="#fcfbf9"] {
+  fill: #191210 !important;
+}
+
+html.dark #canvas-grid path {
+  stroke: rgba(215, 199, 178, 0.12) !important;
+}
+
+html.dark svg.fabric-weave-pattern line[stroke="#0f172a"] {
+  stroke: rgba(215, 199, 178, 0.2) !important;
+}
+
+/* Rulers text and ticks */
+html.dark .bg-stone-100.border-stone-300 {
+  background-color: #191210 !important;
+  border-color: #382a23 !important;
+}
+
+html.dark .bg-stone-100.border-stone-300 .bg-stone-700 {
+  background-color: #ab9b88 !important;
+}
+
+html.dark .bg-stone-100.border-stone-300 .bg-stone-400 {
+  background-color: #5a463d !important;
+}
+
+/* Tables in Night Mode */
+html.dark table thead th {
+  color: #c2b29f !important;
+  border-color: #382a23 !important;
+}
+
+html.dark table tbody tr {
+  border-color: #382a23 !important;
+}
+
+html.dark table tbody td {
+  color: #e8ded1 !important;
+}
